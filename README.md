@@ -35,3 +35,63 @@ The toggle matrix is on right.
 And for this button(1,2).
 ![button image](https://github.com/shwejanraj/Lightsout/blob/main/readme/button_press_2.png)
 The toggle matrix is on right.
+
+Now that we have modelled everything we need.We can model clicking a sequence of buttons as adding a set of toggle matrices so that.
+
+G + T(i1, j1)+T(i2, j3)+. . . . .+T(ik, jk) = 0 (modulo 2)
+
+Here G is inital configuration of the game. T(i,j) is the toggle matrix.
+
+We can extend this idea is to assign a coefficient a(i, j) for each toggle matrix T(i, j).
+
+The coefficient is either 0 or 1. 0 means that button is not clicked and if the coefficient is 1 then the button is clicked.
+
+So now we have to find those coefficients so that the from the toggle matrix we get the buttons we have to click in order to solve the game.
+
+The above slide can be summarized into mathematical formula.
+
+<img src="https://latex.codecogs.com/svg.image?\bg{black}G&space;&plus;&space;\sum_{i,j}a(i,j)*T(i,j)&space;=&space;0(modulo&space;2)" title="https://latex.codecogs.com/svg.image?\bg{black}G + \sum_{i,j}a(i,j)*T(i,j) = 0(modulo 2)" />
+
+If we assume that everything here is drawn from GF(2), then we can drop the modulo 2
+
+<img src="https://latex.codecogs.com/svg.image?\bg{black}G&space;&plus;&space;\sum_{i,j}a(i,j)*T(i,j)&space;=&space;0" title="https://latex.codecogs.com/svg.image?\bg{black}G + \sum_{i,j}a(i,j)*T(i,j) = 0" />
+
+we can add -G on both sides of the equation to get.
+
+<img src="https://latex.codecogs.com/svg.image?\bg{black}\sum_{i,j}a(i,j)*T(i,j)&space;=&space;-G" title="https://latex.codecogs.com/svg.image?\bg{black}\sum_{i,j}a(i,j)*T(i,j) = -G" />
+
+In GF(2) -x can be replaced by x.
+
+<img src="https://latex.codecogs.com/svg.image?\bg{black}\sum_{i,j}a(i,j)*T(i,j)&space;=&space;G" title="https://latex.codecogs.com/svg.image?\bg{black}\sum_{i,j}a(i,j)*T(i,j) = G" />
+
+Right now, G and T(i, j) are matrices. we can convert them into column vectors in row-major order.
+
+![matrix to column vector image](https://github.com/shwejanraj/Lightsout/blob/main/readme/row_major_order.png)
+
+Let's define the matrix V to be the matrix whose columns are the T(i, j) .
+
+Let a be the column vector whose elements are a(i,j) in that same order.
+
+     therefore the formula can be rewritten as
+      V a = G
+
+Now the goal is clear we need to solve this system of linear equations, each of whose values are drawn from GF(2). And 'a' contains the solution.
+
+Now we can employ any technique to solve this.
+
+We can invert the V and multiply the it with G. This will give us the solution but we can't solve the system if the matrix V is non invertable.
+
+Else we can use Gauss-elimination to convert the V into identity matrix so that the G contains the solution.
+
+## Code
+
+The folder "Lightsout" contains all the necessary code files.
+
+In that folder run file named run_this.m this takes the matrix as input. And prints the solution in matrix form which tells us which buttons to be pressed.
+
+### put a gif of solution here.
+
+## Some facts.
+
+1. Not all states have a solution except for 3 by 3.
+2. If solution exists this code gives a solution that contains at most n^2 button presses.
