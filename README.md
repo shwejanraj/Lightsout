@@ -20,7 +20,7 @@ The goal of this game is to turn off all the lights in the game.
 
 - Now we need to model the pressing of buttons.
 
-- ![button image](https://github.com/shwejanraj/Lightsout/blob/main/readme/button.png)
+  ![button image](https://github.com/shwejanraj/Lightsout/blob/main/readme/button.png)
 
 - Now we can see that a button press can be modelled as adding a toggle matrix to the current state of the game matrix and taking it modulo 2.
 
@@ -31,11 +31,13 @@ The goal of this game is to turn off all the lights in the game.
 - For example.
 
 - For this button press at (1,1).
-- ![button image](https://github.com/shwejanraj/Lightsout/blob/main/readme/button_press_1.png)
+
+  ![button image](https://github.com/shwejanraj/Lightsout/blob/main/readme/button_press_1.png)
   The toggle matrix is on right.
 
 - And for this button(1,2).
-- ![button image](https://github.com/shwejanraj/Lightsout/blob/main/readme/button_press_2.png)
+
+  ![button image](https://github.com/shwejanraj/Lightsout/blob/main/readme/button_press_2.png)
   The toggle matrix is on right.
 
 - Now that we have modelled everything we need.We can model clicking a sequence of buttons as adding a set of toggle matrices so that.
@@ -68,7 +70,7 @@ The goal of this game is to turn off all the lights in the game.
 
 - Right now, G and T(i, j) are matrices. we can convert them into column vectors in row-major order.
 
-- ![matrix to column vector image](https://github.com/shwejanraj/Lightsout/blob/main/readme/row_major_order.png)
+  ![matrix to column vector image](https://github.com/shwejanraj/Lightsout/blob/main/readme/row_major_order.png)
 
 - Let's define the matrix V to be the matrix whose columns are the T(i, j) .
 
@@ -105,8 +107,6 @@ The goal of this game is to turn off all the lights in the game.
 The folder "Lightsout" contains all the necessary code files.
 
 In that folder run file named run_this.m this takes the matrix as input. And prints the solution in matrix form which tells us which buttons to be pressed.
-
-### put a gif of solution here.
 
 ## Some facts.
 
