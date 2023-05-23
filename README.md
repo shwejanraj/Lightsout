@@ -96,11 +96,11 @@ The goal of this game is to turn off all the lights in the game.
 
 - For 5 by 5 grid.
 
-  ![3by3 result](https://github.com/shwejanraj/Lightsout/blob/main/readme/3by3.gif)
+  ![3by3 result](https://github.com/shwejanraj/Lightsout/blob/main/readme/5by5.gif)
 
 - For 7 by 7 grid.
 
-  ![3by3 result](https://github.com/shwejanraj/Lightsout/blob/main/readme/3by3.gif)
+  ![3by3 result](https://github.com/shwejanraj/Lightsout/blob/main/readme/7by7.gif)
 
 ## Code
 
